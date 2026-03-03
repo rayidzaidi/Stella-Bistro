@@ -1,0 +1,1646 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stella Bistro — Rooftop Dining in Karachi</title>
+    <meta name="description"
+        content="Stella Bistro — Rooftop dining at Free Port Shopping Mall, Tariq Road, Karachi. Reserve via WhatsApp. Explore menu, reviews, gallery, and events." />
+
+    <!-- Premium fonts (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Theme: match menu vibe (dark green + white) */
+            --bg0: #07130f;
+            --bg1: #091a14;
+            --card: rgba(255, 255, 255, .06);
+            --card2: rgba(255, 255, 255, .08);
+            --stroke: rgba(255, 255, 255, .14);
+            --text: rgba(255, 255, 255, .92);
+            --muted: rgba(255, 255, 255, .70);
+            --muted2: rgba(255, 255, 255, .55);
+            --accent: #d9fff1;
+            --accent2: #9ef2d3;
+            --shadow: 0 18px 45px rgba(0, 0, 0, .45);
+            --shadow2: 0 10px 30px rgba(0, 0, 0, .35);
+            --radius: 22px;
+            --radius2: 28px;
+            --max: 1180px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            color: var(--text);
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            background:
+                radial-gradient(1200px 800px at 10% 20%, rgba(158, 242, 211, .10), transparent 55%),
+                radial-gradient(900px 700px at 85% 15%, rgba(217, 255, 241, .08), transparent 55%),
+                radial-gradient(1100px 800px at 70% 90%, rgba(158, 242, 211, .08), transparent 60%),
+                linear-gradient(180deg, var(--bg0), var(--bg1));
+            overflow-x: hidden;
+        }
+
+        /* subtle pattern */
+        body:before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 1px 1px, rgba(255, 255, 255, .06) 1px, transparent 0);
+            background-size: 26px 26px;
+            opacity: .35;
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .container {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 0 18px
+        }
+
+        /* top nav */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(14px);
+            background: rgba(7, 19, 15, .55);
+            border-bottom: 1px solid rgba(255, 255, 255, .10);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+            gap: 12px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 220px;
+        }
+
+        .mark {
+            width: 40px;
+            height: 40px;
+            border-radius: 14px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .06));
+            border: 1px solid rgba(255, 255, 255, .14);
+            box-shadow: var(--shadow2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mark:after {
+            content: "SB";
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            font-family: Cinzel, serif;
+            letter-spacing: .06em;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .92);
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-family: Cinzel, serif;
+            font-weight: 700;
+            letter-spacing: .06em;
+            font-size: 16px;
+            line-height: 1.1;
+        }
+
+        .brand p {
+            margin: 0;
+            color: var(--muted2);
+            font-size: 12px;
+            letter-spacing: .02em;
+        }
+
+        .links {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center
+        }
+
+        .links a {
+            font-size: 13px;
+            color: var(--muted);
+            padding: 8px 10px;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            transition: .2s ease;
+        }
+
+        .links a:hover {
+            color: var(--text);
+            border-color: rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .05);
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            min-width: 220px
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(255, 255, 255, .06);
+            color: var(--text);
+            box-shadow: var(--shadow2);
+            transition: transform .18s ease, background .18s ease, border-color .18s ease;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            background: rgba(255, 255, 255, .09);
+            border-color: rgba(255, 255, 255, .20)
+        }
+
+        .btn.primary {
+            background: linear-gradient(180deg, rgba(158, 242, 211, .18), rgba(255, 255, 255, .06));
+            border-color: rgba(158, 242, 211, .35);
+        }
+
+        .btn.ghost {
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .05);
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        /* hero */
+        .hero {
+            padding: 54px 0 28px;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        .hero-card {
+            border-radius: var(--radius2);
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .03));
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        /* 3D glow edge */
+        .hero-card:before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            background: radial-gradient(600px 260px at 20% 20%, rgba(158, 242, 211, .18), transparent 55%),
+                radial-gradient(520px 280px at 90% 10%, rgba(217, 255, 241, .12), transparent 55%);
+            filter: blur(10px);
+            opacity: .9;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            min-height: 420px;
+        }
+
+        .hero h2 {
+            margin: 6px 0 0;
+            font-family: Cinzel, serif;
+            font-weight: 700;
+            letter-spacing: .06em;
+            font-size: clamp(28px, 3.4vw, 44px);
+            line-height: 1.08;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+        }
+
+        .hero p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.55;
+            max-width: 62ch;
+        }
+
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .meta {
+            margin-top: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .info-card {
+            border-radius: var(--radius2);
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .05);
+            box-shadow: var(--shadow2);
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-height: 420px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card:before {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            background: radial-gradient(520px 280px at 30% 20%, rgba(217, 255, 241, .10), transparent 55%),
+                radial-gradient(520px 320px at 90% 90%, rgba(158, 242, 211, .10), transparent 60%);
+            filter: blur(10px);
+            opacity: .9;
+            pointer-events: none;
+        }
+
+        .info-card>* {
+            position: relative
+        }
+
+        .kpi {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .tile {
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .05);
+            padding: 12px;
+            box-shadow: var(--shadow2);
+            min-height: 76px;
+        }
+
+        .tile .label {
+            color: var(--muted2);
+            font-size: 12px
+        }
+
+        .tile .value {
+            margin-top: 6px;
+            font-weight: 700
+        }
+
+        .tile small {
+            color: var(--muted2)
+        }
+
+        .sep {
+            height: 1px;
+            background: rgba(255, 255, 255, .10);
+            margin: 4px 0
+        }
+
+        /* sections */
+        section {
+            padding: 26px 0
+        }
+
+        .section-title {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .section-title h3 {
+            margin: 0;
+            font-family: Cinzel, serif;
+            font-weight: 700;
+            letter-spacing: .06em;
+            font-size: 22px;
+        }
+
+        .section-title p {
+            margin: 0;
+            color: var(--muted2);
+            font-size: 13px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px
+        }
+
+        .card {
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .05);
+            box-shadow: var(--shadow2);
+            padding: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            background: radial-gradient(420px 240px at 20% 10%, rgba(158, 242, 211, .12), transparent 55%);
+            filter: blur(10px);
+            opacity: .7;
+            pointer-events: none;
+        }
+
+        .card>* {
+            position: relative
+        }
+
+        .card h4 {
+            margin: 0 0 8px;
+            font-size: 18px;
+            font-family: Cinzel, serif;
+            letter-spacing: .02em;
+            color: var(--accent2);
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.6
+        }
+
+        /* Stella Experience section unique styles */
+        .experience-section {
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .experience-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .experience-header h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text);
+            margin: 0 0 16px 0;
+            letter-spacing: 0.05em;
+        }
+
+        .gold-divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            margin: 0 auto;
+        }
+
+        /* 3D hover animation for the new cards */
+        .premium-card {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+            cursor: default;
+        }
+
+        .premium-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        /* Smooth Fade In Scroll Animation */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        .delay-4 {
+            animation-delay: 0.8s;
+        }
+
+        .delay-5 {
+            animation-delay: 1.0s;
+        }
+
+        .delay-6 {
+            animation-delay: 1.2s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Testimonials section unique styles */
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .reviews-header h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text);
+            margin: 0;
+            letter-spacing: 0.05em;
+        }
+
+        .trust-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .trust-score {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .stars {
+            color: #d4af37;
+            letter-spacing: 2px;
+            font-size: 16px;
+        }
+
+        .trust-meta {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .btn-view-all {
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .testimonial-card {
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(212, 175, 55, 0.2);
+        }
+
+        .testimonial-card:before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            background: radial-gradient(300px 300px at 50% 0%, rgba(212, 175, 55, 0.08), transparent 70%);
+            filter: blur(8px);
+            pointer-events: none;
+        }
+
+        .testimonial-card>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reviewer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .review-time {
+            font-size: 12px;
+            color: var(--muted2);
+        }
+
+        .review-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text);
+            font-style: italic;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+            flex-grow: 1;
+        }
+
+        .review-divider {
+            height: 1px;
+            background: linear-gradient(90deg, rgba(212, 175, 55, 0.3), transparent);
+            margin: 4px 0;
+            width: 100%;
+        }
+
+        .review-meta {
+            font-size: 12px;
+            color: var(--muted2);
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .review-ratings {
+            font-weight: 500;
+            color: var(--muted);
+        }
+
+        /* menu */
+        .menu-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .search {
+            flex: 1;
+            min-width: 240px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .05);
+            box-shadow: var(--shadow2);
+            padding: 10px 12px;
+        }
+
+        .search input {
+            width: 100%;
+            border: 0;
+            outline: 0;
+            background: transparent;
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: flex-end;
+        }
+
+        .chip {
+            padding: 8px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .04);
+            color: var(--muted);
+            font-weight: 600;
+            font-size: 12px;
+            cursor: pointer;
+            transition: .16s ease;
+        }
+
+        .chip:hover {
+            background: rgba(255, 255, 255, .07);
+            color: var(--text)
+        }
+
+        .chip.active {
+            background: rgba(158, 242, 211, .12);
+            border-color: rgba(158, 242, 211, .30);
+            color: var(--text);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 14px;
+            align-items: start;
+        }
+
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .menu-item {
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .05);
+            box-shadow: var(--shadow2);
+            padding: 12px 14px;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .menu-item h5 {
+            margin: 0;
+            font-size: 14px;
+            letter-spacing: .01em;
+        }
+
+        .menu-item p {
+            margin: 6px 0 0;
+            color: var(--muted2);
+            font-size: 12px;
+            line-height: 1.45;
+        }
+
+        .price {
+            font-weight: 800;
+            color: rgba(217, 255, 241, .92);
+            white-space: nowrap;
+        }
+
+        .menu-side {
+            position: sticky;
+            top: 82px;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .05);
+            box-shadow: var(--shadow2);
+            padding: 16px;
+        }
+
+        .menu-side .small {
+            color: var(--muted2);
+            font-size: 12px;
+            line-height: 1.5
+        }
+
+        .menu-side ul {
+            margin: 10px 0 0;
+            padding-left: 18px;
+            color: var(--muted)
+        }
+
+        .menu-side li {
+            margin: 6px 0;
+            font-size: 13px
+        }
+
+        /* gallery placeholders */
+        .ph-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 10px
+        }
+
+        .ph {
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .03)),
+                radial-gradient(260px 160px at 30% 30%, rgba(158, 242, 211, .10), transparent 60%);
+            min-height: 140px;
+            box-shadow: var(--shadow2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ph:after {
+            content: "Image placeholder";
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            color: rgba(255, 255, 255, .40);
+            font-size: 12px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .ph.big {
+            grid-column: span 7;
+            min-height: 300px
+        }
+
+        .ph.mid {
+            grid-column: span 5;
+            min-height: 300px
+        }
+
+        .ph.small {
+            grid-column: span 4;
+            min-height: 180px
+        }
+
+        /* forms */
+        form {
+            display: grid;
+            gap: 10px
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px
+        }
+
+        .field {
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .05);
+            padding: 10px 12px;
+            box-shadow: var(--shadow2);
+        }
+
+        .field input,
+        .field textarea,
+        .field select {
+            width: 100%;
+            border: 0;
+            outline: 0;
+            background: transparent;
+            color: var(--text);
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical
+        }
+
+        /* footer */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, .10);
+            padding: 22px 0 38px;
+            margin-top: 16px;
+            color: var(--muted2);
+        }
+
+        .foot {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .foot a {
+            color: var(--muted);
+            border-bottom: 1px dashed rgba(255, 255, 255, .18)
+        }
+
+        .foot a:hover {
+            color: var(--text)
+        }
+
+        @media (max-width: 980px) {
+            .hero-grid {
+                grid-template-columns: 1fr
+            }
+
+            .info-card {
+                min-height: auto
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr
+            }
+
+            .menu-side {
+                position: relative;
+                top: auto
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .row {
+                grid-template-columns: 1fr
+            }
+
+            .actions {
+                min-width: auto
+            }
+
+            .brand {
+                min-width: auto
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAV -->
+    <div class="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <div class="brand">
+                    <div class="mark" aria-hidden="true"></div>
+                    <div>
+                        <h1>Stella Bistro</h1>
+                        <p>Rooftop • Tariq Road, Karachi</p>
+                    </div>
+                </div>
+
+                <div class="links" role="navigation" aria-label="Primary">
+                    <a href="#menu">Menu</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#reviews">Reviews</a>
+                    <a href="#events">Events</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <div class="actions">
+                    <a class="btn ghost" href="tel:+923012234444">Call</a>
+                    <a class="btn primary" id="waReserveTop" href="#" rel="noopener">Reserve (WhatsApp)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-card" id="tiltCard">
+                    <div class="hero-content">
+                        <span class="pill">Premium Rooftop Dining • Open Daily 5:30 PM – 4:00 AM</span>
+                        <h2>Elevated nights.<br />Signature flavours.</h2>
+                        <p>
+                            Stella Bistro brings a refined rooftop experience to Tariq Road—crafted plates, warm
+                            ambience,
+                            and late-night dining done right.
+                        </p>
+
+                        <div class="hero-ctas">
+                            <a class="btn primary" id="waReserveHero" href="#" rel="noopener">Reserve a Table</a>
+                            <a class="btn" id="waOrderHero" href="#" rel="noopener">Order Now (WhatsApp)</a>
+                            <a class="btn" href="https://www.foodpanda.pk/restaurant/h0pd/stella-bistro-h0pd"
+                                target="_blank" rel="noopener">Order on Foodpanda</a>
+                            <a class="btn" href="https://share.google/bHI5Lp76gFNFmn0Wo" target="_blank"
+                                rel="noopener">Get Directions</a>
+                        </div>
+
+                        <div class="meta">
+                            <span class="pill">📍 Rooftops, Free Port Shopping Mall, Main Tariq Road</span>
+                            <span class="pill">📞 +92 301 2234444</span>
+                            <span class="pill">🌙 Late-night service</span>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="info-card">
+                    <div>
+                        <div class="section-title" style="margin:0 0 6px">
+                            <h3 style="font-size:18px">Quick Actions</h3>
+                            <p>Pitch-ready essentials</p>
+                        </div>
+                        <div class="kpi">
+                            <div class="tile">
+                                <div class="label">Reservation</div>
+                                <div class="value">WhatsApp / Call</div>
+                                <small class="muted">Instant booking</small>
+                            </div>
+                            <div class="tile">
+                                <div class="label">Ordering</div>
+                                <div class="value">WhatsApp / Foodpanda</div>
+                                <small class="muted"><a
+                                        href="https://www.foodpanda.pk/restaurant/h0pd/stella-bistro-h0pd"
+                                        target="_blank" style="text-decoration: underline;">Order on
+                                        Foodpanda</a></small>
+                            </div>
+                            <div class="tile">
+                                <div class="label">Menu</div>
+                                <div class="value">Categories + Search</div>
+                                <small class="muted">Fast filtering</small>
+                            </div>
+                            <div class="tile">
+                                <div class="label">Events</div>
+                                <div class="value">Inquiry Form</div>
+                                <small class="muted">Catering-ready</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sep"></div>
+
+                    <div>
+                        <div class="section-title" style="margin:0 0 6px">
+                            <h3 style="font-size:18px">Hours</h3>
+                            <p>Mon–Sun</p>
+                        </div>
+                        <p style="margin:0; color:var(--muted); line-height:1.6">
+                            Monday – Sunday<br />
+                            <b style="color:var(--text)">5:30 PM – 4:00 AM</b>
+                        </p>
+                    </div>
+
+                    <div class="sep"></div>
+
+                    <div>
+                        <div class="section-title" style="margin:0 0 6px">
+                            <h3 style="font-size:18px">Social</h3>
+                            <p>Follow Stella</p>
+                        </div>
+                        <div style="display:flex; gap:10px; flex-wrap:wrap">
+                            <a class="btn" href="https://www.instagram.com/stellabistro.pk/" target="_blank"
+                                rel="noopener">Instagram</a>
+                            <a class="btn" href="https://www.facebook.com/p/Stella-Bistro-61584550546857/"
+                                target="_blank" rel="noopener">Facebook</a>
+                            <a class="btn" href="https://www.foodpanda.pk/restaurant/h0pd/stella-bistro-h0pd"
+                                target="_blank" rel="noopener">Foodpanda</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </header>
+
+    <!-- THE STELLA EXPERIENCE -->
+    <section class="experience-section">
+        <div class="container">
+            <div class="experience-header fade-in-up">
+                <h3>The Stella Experience</h3>
+                <div class="gold-divider"></div>
+            </div>
+            <div class="grid-3">
+                <div class="card premium-card fade-in-up delay-1">
+                    <h4>Elevated Rooftop Ambience</h4>
+                    <p>Golden lights, open skies, and an atmosphere designed for unforgettable evenings.</p>
+                </div>
+                <div class="card premium-card fade-in-up delay-2">
+                    <h4>Crafted Signature Menu</h4>
+                    <p>From sizzling steaks to indulgent desserts — every plate made to impress.</p>
+                </div>
+                <div class="card premium-card fade-in-up delay-3">
+                    <h4>Late-Night Luxury</h4>
+                    <p>Serving until 4 AM — because great nights deserve great food.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h3>Menu</h3>
+                <p>Search + category filters (premium digital menu)</p>
+            </div>
+
+            <div class="menu-tools">
+                <div class="search" role="search">
+                    <span style="color:rgba(255,255,255,.55)">⌕</span>
+                    <input id="menuSearch" placeholder="Search menu… (e.g., pizza, soup, steak)" autocomplete="off" />
+                </div>
+                <div class="chips" id="chips"></div>
+            </div>
+
+            <div class="menu-grid">
+                <div class="menu-list" id="menuList"></div>
+
+                <div class="menu-side">
+                    <h4 style="margin:0 0 8px">Good to know</h4>
+                    <p class="small" style="margin:0 0 10px">
+                        Prices & items can be updated anytime. This layout supports future upgrades like:
+                        “Chef Special”, “Spicy”, “New”, and add-ons.
+                    </p>
+                    <ul>
+                        <li>Reserve: WhatsApp / Call</li>
+                        <li>Order: WhatsApp / <a href="https://www.foodpanda.pk/restaurant/h0pd/stella-bistro-h0pd"
+                                target="_blank" style="text-decoration: underline;">Foodpanda</a></li>
+                        <li>Google Reviews section included</li>
+                        <li>Events & Catering inquiry form included</li>
+                    </ul>
+
+                    <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+                        <a class="btn primary" href="tel:+923012234444">Call Now</a>
+                        <a class="btn" id="waMenu" href="#" rel="noopener">WhatsApp</a>
+                        <a class="btn" href="https://www.foodpanda.pk/restaurant/h0pd/stella-bistro-h0pd"
+                            target="_blank" rel="noopener">Foodpanda</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY (PLACEHOLDERS ONLY FOR NOW) -->
+    <section id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h3>Gallery</h3>
+                <p>Placeholders now — we’ll add real photos later</p>
+            </div>
+
+            <div class="ph-grid" aria-label="Gallery placeholders">
+                <div class="ph big"></div>
+                <div class="ph mid"></div>
+                <div class="ph small"></div>
+                <div class="ph small"></div>
+                <div class="ph small"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews">
+        <div class="container">
+            <div class="reviews-header fade-in-up">
+                <h3>Guest Reviews</h3>
+            </div>
+
+            <div class="trust-bar fade-in-up delay-1">
+                <div class="trust-score">
+                    <span class="stars">★★★★★</span>
+                    <span>4.8 / 5.0</span>
+                </div>
+                <div class="trust-meta">• Based on 27 Google Reviews</div>
+                <div style="flex-basis: 100%; text-align: center;">
+                    <a class="btn primary btn-view-all" href="https://www.google.com/search?q=Stella+Bistro+Reviews"
+                        target="_blank" rel="noopener">
+                        View All on Google
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid-3">
+
+                <!-- Review 1 -->
+                <div class="testimonial-card fade-in-up delay-1">
+                    <div class="testimonial-header">
+                        <div class="reviewer-info">
+                            <h4 class="reviewer-name">Anas Hafeez</h4>
+                            <span class="review-time">1 month ago</span>
+                        </div>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p class="review-text">“Great vibes, beautiful ambience 😍✨ Delicious food and a place worth
+                        visiting again — highly recommended ⭐”</p>
+                    <div class="review-divider"></div>
+                    <div class="review-meta">
+                        <span>Dine-in • Price: Rs 1,000–2,000</span>
+                        <span class="review-ratings">Food 5/5 • Service 5/5 • Atmosphere 5/5</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="testimonial-card fade-in-up delay-2">
+                    <div class="testimonial-header">
+                        <div class="reviewer-info">
+                            <h4 class="reviewer-name">Umer Saleem Kasmani</h4>
+                            <span class="review-time">1 month ago</span>
+                        </div>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p class="review-text">“Perfect in all aspects, cool breezes, sheesha and good hot food. Amazing ❤️”
+                    </p>
+                    <div class="review-divider"></div>
+                    <div class="review-meta">
+                        <span>Dine-in • Price: Rs 3,000–4,000</span>
+                        <span class="review-ratings">Food 5/5 • Service 5/5 • Atmosphere 5/5</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="testimonial-card fade-in-up delay-3">
+                    <div class="testimonial-header">
+                        <div class="reviewer-info">
+                            <h4 class="reviewer-name">AMD K</h4>
+                            <span class="review-time">1 month ago</span>
+                        </div>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p class="review-text">“Ambiance was so good and staff was cooperative. Highly recommend — great
+                        pricing compared to other cafes.”</p>
+                    <div class="review-divider"></div>
+                    <div class="review-meta">
+                        <span>Price: Rs 1,000–2,000 • Wait time up to 10 min</span>
+                        <span class="review-ratings">Food 5/5 • Service 5/5 • Atmosphere 5/5</span>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="testimonial-card fade-in-up delay-4">
+                    <div class="testimonial-header">
+                        <div class="reviewer-info">
+                            <h4 class="reviewer-name">Pavesh Kumar</h4>
+                            <span class="review-time">3 weeks ago</span>
+                        </div>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p class="review-text">“First time visiting with my husband — overall everything was best.”</p>
+                    <div class="review-divider"></div>
+                    <div class="review-meta">
+                        <span>Dine-in</span>
+                        <span class="review-ratings">Food 5/5 • Service 5/5 • Atmosphere 5/5</span>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="testimonial-card fade-in-up delay-5">
+                    <div class="testimonial-header">
+                        <div class="reviewer-info">
+                            <h4 class="reviewer-name">Mir-Hasnain Baloch</h4>
+                            <span class="review-time">3 weeks ago</span>
+                        </div>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p class="review-text">“Everything was perfect — the food, dessert, and staff were cooperative and
+                        humble ❤️”</p>
+                    <div class="review-divider"></div>
+                    <div class="review-meta">
+                        <span>Dine-in</span>
+                        <span class="review-ratings">Food 5/5 • Service 5/5 • Atmosphere 5/5</span>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="testimonial-card fade-in-up delay-6">
+                    <div class="testimonial-header">
+                        <div class="reviewer-info">
+                            <h4 class="reviewer-name">Fizza Naqvi</h4>
+                            <span class="review-time">1 month ago</span>
+                        </div>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p class="review-text">“Good experience, highly recommended 🥰”</p>
+                    <div class="review-divider"></div>
+                    <div class="review-meta">
+                        <span>Dine-in</span>
+                        <span class="review-ratings">Food 5/5 • Service 5/5 • Atmosphere 5/5</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events">
+        <div class="container">
+            <div class="section-title">
+                <h3>Events & Catering</h3>
+                <p>Inquiry form (sends to WhatsApp)</p>
+            </div>
+
+            <div class="card">
+                <form id="eventForm">
+                    <div class="row">
+                        <div class="field"><input required name="name" placeholder="Your name" /></div>
+                        <div class="field"><input required name="phone" placeholder="Phone / WhatsApp" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="field">
+                            <select name="type">
+                                <option>Birthday</option>
+                                <option>Corporate</option>
+                                <option>Family Gathering</option>
+                                <option>Private Dinner</option>
+                                <option>Catering</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="field"><input name="date" type="date" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="field"><input name="guests" placeholder="Guests (approx.)" /></div>
+                        <div class="field"><input name="time" placeholder="Preferred time (e.g., 9:00 PM)" /></div>
+                    </div>
+                    <div class="field"><textarea name="notes" placeholder="Tell us about your event…"></textarea></div>
+                    <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center">
+                        <button class="btn primary" type="submit">Send Inquiry (WhatsApp)</button>
+                        <span class="pill">Response via WhatsApp</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h3>Contact</h3>
+                <p>Map + quick contact options</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <h4>Address</h4>
+                    <p>
+                        Rooftops, Free Port Shopping Mall,<br />
+                        Main Tariq Road, Delhi CHS, Karachi, 00000
+                    </p>
+                    <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+                        <a class="btn" href="https://share.google/bHI5Lp76gFNFmn0Wo" target="_blank" rel="noopener">Open
+                            Map</a>
+                        <a class="btn" href="tel:+923012234444">Call</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4>WhatsApp</h4>
+                    <p>Fastest way to reserve a table or place an order.</p>
+                    <div style="margin-top:12px">
+                        <a class="btn primary" id="waContact" href="#" rel="noopener">Chat on WhatsApp</a>
+                    </div>
+                    <p style="margin-top:10px; color:var(--muted2)">+92 301 2234444</p>
+                </div>
+
+                <div class="card">
+                    <h4>Find Us</h4>
+                    <p style="margin-bottom:10px">Rooftop dining under the stars.</p>
+
+                    <!-- Premium Google Map Embed -->
+                    <div style="
+                      border-radius: 18px;
+                      overflow: hidden;
+                      border: 1px solid rgba(255,255,255,.12);
+                      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+                      backdrop-filter: blur(10px);
+                    ">
+
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25650.759229223895!2d67.04088221771265!3d24.86899879542814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f06e50044ad%3A0xff8d0e540e44cae5!2sStella%20Bistro!5e0!3m2!1sen!2s!4v1772544466314!5m2!1sen!2s"
+                            width="100%" height="220" style="border:0; display:block;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+
+                    </div>
+
+                    <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+                        <a class="btn primary"
+                            href="https://www.google.com/maps/dir//Stella+Bistro,+Rooftops,+free+port+shopping+mall,+main+Tariq+Road,+Karachi,+Delhi+CHS+Karachi,+00000,+Pakistan"
+                            target="_blank" rel="noopener">
+                            Get Directions
+                        </a>
+
+                        <a class="btn" href="https://www.google.com/maps/place/Stella+Bistro/" target="_blank"
+                            rel="noopener">
+                            Open in Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="foot">
+                <div>
+                    <b style="color:var(--text)">Stella Bistro</b> <span style="opacity:.8">• Karachi</span><br />
+                    <span>Open daily 5:30 PM – 4:00 AM</span>
+                </div>
+                <div style="display:flex; gap:12px; flex-wrap:wrap">
+                    <a href="https://www.instagram.com/stellabistro.pk/" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://www.facebook.com/p/Stella-Bistro-61584550546857/" target="_blank"
+                        rel="noopener">Facebook</a>
+                    <a href="#menu">Menu</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===========
+        // CONFIG
+        // ===========
+        const PHONE = "+923012234444";
+        const WHATSAPP_NUMBER = "923012234444"; // no + for wa.me
+        const MAP_LINK = "https://share.google/bHI5Lp76gFNFmn0Wo";
+        const GOOGLE_REVIEWS_LINK = "https://www.google.com/search?q=Stella+Bistro+Reviews";
+
+        // Foodpanda link (add later when you have it)
+        const FOODPANDA_LINK = ""; // e.g., "https://www.foodpanda.pk/restaurant/xxxx/stella-bistro"
+
+        // ===========
+        // MENU DATA (can be expanded later)
+        // Right now it’s structured + pitch-ready. We’ll replace/complete from your menu pages as needed.
+        // ===========
+        const menuData = [
+            { cat: "Starters", name: "Dynamite Chicken", desc: "8 pieces crispy chicken with special dynamite sauce.", price: "Rs 999" },
+            { cat: "Starters", name: "Buffalo Wings", desc: "6 pieces wings with special buffalo sauce.", price: "Rs 899" },
+            { cat: "Starters", name: "Mayo Garlic Fries", desc: "6mm fries served with mayo garlic sauce.", price: "Rs 549" },
+            { cat: "Starters", name: "Mexican Nachos", desc: "Nachos with tomato salsa, cheese sauce & sour cream.", price: "Rs 1099" },
+            { cat: "Starters", name: "Peri Bite", desc: "Stuffed chilli with peri peri chicken & cheese sauce.", price: "Rs 799" },
+            { cat: "Starters", name: "Strip Chicken", desc: "Crispy coated chicken with honey mustard sauce.", price: "Rs 1089" },
+            { cat: "Starters", name: "Dynamite Prawn", desc: "Crispy fried prawn with special dynamite sauce.", price: "Rs 1099" },
+
+            { cat: "Pasta", name: "Fettuccine Alfredo", desc: "Fettuccine with grilled chicken & alfredo sauce.", price: "Rs 1395" },
+            { cat: "Pasta", name: "Mac & Cheese", desc: "Macaroni with vegetables & cheese sauce.", price: "Rs 1495" },
+            { cat: "Pasta", name: "Portofino Pasta", desc: "Spaghetti in spicy white sauce with chicken & mushrooms.", price: "Rs 1495" },
+
+            { cat: "Pizza", name: "Signature Supreme Pizza", desc: "Beef + chicken with special homemade pizza sauce.", price: "Rs 1595" },
+            { cat: "Pizza", name: "Pepperoni Pizza", desc: "Pepperoni with special pizza sauce & cheese.", price: "Rs 1595" },
+            { cat: "Pizza", name: "Fajita Pizza", desc: "Cajun chicken with Mexican vegetables & cheese.", price: "Rs 1595" },
+            { cat: "Pizza", name: "Margarita Pizza", desc: "Tomato sauce & cheese.", price: "Rs 1495" },
+
+            { cat: "Soups", name: "Corn Soup (Single)", desc: "Piping hot stock cooked traditional style.", price: "Rs 499" },
+            { cat: "Soups", name: "Hot and Sour Soup", desc: "For spice lovers, sour and hot taste.", price: "Rs 499" },
+            { cat: "Soups", name: "Cream of Chicken Soup", desc: "Served with chopped chicken & garlic bread.", price: "Rs 599" },
+            { cat: "Soups", name: "Thai Soup", desc: "Clear flavourful soup with Thai taste.", price: "Rs 499" },
+
+            { cat: "Salads", name: "Grilled Chicken Salad", desc: "Grilled chicken with cucumber, onion, lettuce & capsicum.", price: "Rs 1099" },
+            { cat: "Salads", name: "Caesar Salad", desc: "Iceberg with Caesar dressing, croutons & parmesan.", price: "Rs 999" },
+            { cat: "Salads", name: "Stella Bistro’s Signature Salad", desc: "Cucumber, lettuce, iceberg, cheese, tomatoes, shrimps & egg.", price: "Rs 999" },
+
+            { cat: "Steak", name: "Beef Medallion", desc: "Choice of sauce & sides available.", price: "Rs 1999" },
+            { cat: "Steak", name: "Filet Mignon", desc: "Choice of sauce & sides available.", price: "Rs 2195" },
+            { cat: "Steak", name: "Beef Skirt Steak", desc: "Choice of sauce & sides available.", price: "Rs 1949" },
+            { cat: "Steak", name: "Parmesan Crust Beef Medallion", desc: "Choice of sauce & sides available.", price: "Rs 2499" },
+
+            { cat: "Seafood", name: "Grilled Fish", desc: "Continental grilled fish with sautéed vegetables & lemon butter.", price: "Rs 3699" },
+            { cat: "Seafood", name: "Coriander Crust Fish", desc: "Fish with coriander crust, mustard creamy sauce & veggies.", price: "Rs 3699" },
+
+            { cat: "Sandwiches", name: "Stella Bistro’s Signature Sandwich", desc: "Chicken, cheese, egg & chef’s special sauce.", price: "Rs 1299" },
+            { cat: "Sandwiches", name: "Club Sandwich (Triple Decker)", desc: "Chicken, egg, cheese, lettuce, tomato & cucumber.", price: "Rs 1499" },
+            { cat: "Sandwiches", name: "Grilled Chicken Sandwich", desc: "Smoky chicken with lettuce, cucumber & tomato.", price: "Rs 1199" },
+            { cat: "Sandwiches", name: "Roast Beef Sandwich", desc: "Roasted beef with fresh lettuce, cucumber & tomato.", price: "Rs 1399" },
+            { cat: "Sandwiches", name: "Fillet Steak Sandwich", desc: "Beef julienne with mushroom sauce & cheese topping.", price: "Rs 1399" },
+
+            { cat: "Main Course (Chicken)", name: "Moroccan Chicken", desc: "Grilled chicken with sautéed vegetables & choice of sideline.", price: "Rs 1649" },
+            { cat: "Main Course (Chicken)", name: "Tarragon Chicken", desc: "Grilled chicken with sautéed vegetables & choice of sideline.", price: "Rs 1649" },
+            { cat: "Main Course (Chicken)", name: "Parmesan Chicken", desc: "Crumb fried chicken with marinara & parmesan.", price: "Rs 1649" },
+
+            { cat: "Burgers", name: "Stella Special Burger", desc: "Stuffed beef patty with potato bun & fries.", price: "Rs 1195" },
+            { cat: "Burgers", name: "Crispy Chicken Burger", desc: "Crispy patty with special sauce.", price: "Rs 1095" },
+            { cat: "Burgers", name: "Ultimate Chicken Burger", desc: "Chicken minced patty tossed with BBQ sauce.", price: "Rs 1295" },
+            { cat: "Burgers", name: "Classic Beef Burger", desc: "Beef minced patty with crunch of vegetables.", price: "Rs 1295" },
+            { cat: "Burgers", name: "Smashed Beef Burger", desc: "Smashed beef with homemade house special sauce.", price: "Rs 1495" },
+
+            { cat: "Handi", name: "Chicken Paneer Handi", desc: "Traditional handi style.", price: "Rs 2290" },
+            { cat: "Handi", name: "Chicken Makhni Handi", desc: "Traditional makhni style.", price: "Rs 2290" },
+
+            { cat: "Tandoor", name: "Roti", desc: "Fresh tandoor roti.", price: "Rs 49" },
+            { cat: "Tandoor", name: "Chapati", desc: "Fresh chapati.", price: "Rs 49" },
+            { cat: "Tandoor", name: "Garlic Nan", desc: "Garlic naan.", price: "Rs 99" },
+            { cat: "Tandoor", name: "Roghni Naan", desc: "Roghni naan.", price: "Rs 120" },
+            { cat: "Tandoor", name: "Poori Paratha", desc: "Poori paratha.", price: "Rs 180" },
+
+            { cat: "Dessert", name: "Brownie with Ice Cream", desc: "Classic dessert.", price: "Rs 499" },
+            { cat: "Dessert", name: "Coffee Rusk Delight", desc: "Signature delight.", price: "Rs 449" },
+            { cat: "Dessert", name: "3 Layers Oreo & Cream", desc: "Layered dessert.", price: "Rs 449" },
+            { cat: "Dessert", name: "3 Layers Lotus & Cream", desc: "Layered dessert.", price: "Rs 499" },
+        ];
+
+        // ===========
+        // WhatsApp actions
+        // ===========
+        function waLink(message) {
+            const encoded = encodeURIComponent(message);
+            return `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+        }
+
+        const reserveMsg = `Hi Stella Bistro! I’d like to reserve a table.\n\nName:\nDate:\nTime:\nGuests:\n\n(From website)`;
+        const orderMsg = `Hi Stella Bistro! I’d like to place an order.\n\nItems:\nAddress:\nPhone:\n\n(From website)`;
+        const contactMsg = `Hi Stella Bistro! I have a question.\n\n(From website)`;
+
+        function wireWhatsApp() {
+            const ids = ["waReserveTop", "waReserveHero", "waOrderHero", "waMenu", "waContact"];
+            ids.forEach(id => {
+                const el = document.getElementById(id);
+                if (!el) return;
+                if (id.includes("Order")) {
+                    el.href = waLink(orderMsg);
+                } else if (id.includes("Contact")) {
+                    el.href = waLink(contactMsg);
+                } else {
+                    el.href = waLink(reserveMsg);
+                }
+                el.target = "_blank";
+            });
+        }
+
+        // ===========
+        // Menu render + filters
+        // ===========
+        const chipsEl = document.getElementById("chips");
+        const listEl = document.getElementById("menuList");
+        const searchEl = document.getElementById("menuSearch");
+
+        let activeCat = "All";
+
+        function categories() {
+            const set = new Set(menuData.map(x => x.cat));
+            return ["All", ...Array.from(set)];
+        }
+
+        function renderChips() {
+            chipsEl.innerHTML = "";
+            categories().forEach(cat => {
+                const b = document.createElement("button");
+                b.className = "chip" + (cat === activeCat ? " active" : "");
+                b.textContent = cat;
+                b.onclick = () => {
+                    activeCat = cat;
+                    renderChips();
+                    renderMenu();
+                };
+                chipsEl.appendChild(b);
+            });
+        }
+
+        function match(item, q) {
+            if (!q) return true;
+            q = q.toLowerCase().trim();
+            return (
+                item.name.toLowerCase().includes(q) ||
+                item.desc.toLowerCase().includes(q) ||
+                item.cat.toLowerCase().includes(q) ||
+                item.price.toLowerCase().includes(q)
+            );
+        }
+
+        function renderMenu() {
+            const q = searchEl.value || "";
+            const filtered = menuData.filter(x => {
+                const catOk = (activeCat === "All") ? true : x.cat === activeCat;
+                return catOk && match(x, q);
+            });
+
+            listEl.innerHTML = "";
+            if (filtered.length === 0) {
+                const empty = document.createElement("div");
+                empty.className = "card";
+                empty.innerHTML = `<h4 style="margin:0 0 6px">No results</h4>
+          <p style="margin:0">Try searching a different keyword or select “All”.</p>`;
+                listEl.appendChild(empty);
+                return;
+            }
+
+            filtered.forEach(item => {
+                const el = document.createElement("div");
+                el.className = "menu-item";
+                el.innerHTML = `
+          <div>
+            <h5>${item.name} <span style="color:rgba(255,255,255,.45); font-weight:700; font-size:12px">• ${item.cat}</span></h5>
+            <p>${item.desc}</p>
+          </div>
+          <div class="price">${item.price}</div>
+        `;
+                listEl.appendChild(el);
+            });
+        }
+
+        // ===========
+        // Events form -> WhatsApp
+        // ===========
+        document.getElementById("eventForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const fd = new FormData(e.target);
+            const msg =
+                `Hi Stella Bistro! I’d like to inquire about an event/catering.\n\n` +
+                `Name: ${fd.get("name")}\n` +
+                `Phone: ${fd.get("phone")}\n` +
+                `Type: ${fd.get("type")}\n` +
+                `Date: ${fd.get("date") || "-"}\n` +
+                `Guests: ${fd.get("guests") || "-"}\n` +
+                `Time: ${fd.get("time") || "-"}\n\n` +
+                `Notes: ${fd.get("notes") || "-"}\n\n(From website)`;
+
+            window.open(waLink(msg), "_blank");
+        });
+
+        // ===========
+        // Simple 3D tilt on hero card (premium feel)
+        // ===========
+        const card = document.getElementById("tiltCard");
+        card.addEventListener("mousemove", (e) => {
+            const r = card.getBoundingClientRect();
+            const x = e.clientX - r.left;
+            const y = e.clientY - r.top;
+            const rx = ((y / r.height) - 0.5) * -7;
+            const ry = ((x / r.width) - 0.5) * 7;
+            card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+        });
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = "rotateX(0deg) rotateY(0deg)";
+        });
+
+        // ===========
+        // Scroll Fade Anims
+        // ===========
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        });
+
+        document.querySelectorAll('.fade-in-up').forEach((el) => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+        // ===========
+        // Initialize
+        // ===========
+        wireWhatsApp();
+        renderChips();
+        renderMenu();
+        searchEl.addEventListener("input", renderMenu);
+    </script>
+</body>
+
+</html>
