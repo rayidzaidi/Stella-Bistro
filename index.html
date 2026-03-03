@@ -220,109 +220,195 @@
             font-size: 12px;
         }
 
-        /* hero */
-        .hero {
-            padding: 54px 0 28px;
+        /* HERO FULLSCREEN */
+        .hero-fullscreen {
             position: relative;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.15fr .85fr;
-            gap: 22px;
-            align-items: stretch;
-        }
-
-        .hero-card {
-            border-radius: var(--radius2);
-            border: 1px solid rgba(255, 255, 255, .12);
-            background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .03));
-            box-shadow: var(--shadow);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 18px 40px;
             overflow: hidden;
-            position: relative;
-            transform-style: preserve-3d;
+            text-align: center;
+            z-index: 1;
         }
 
-        /* 3D glow edge */
-        .hero-card:before {
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(7, 19, 15, 0.4) 0%, rgba(7, 19, 15, 0.95) 100%);
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        /* Ambient floating orbs */
+        .hero-bg::before,
+        .hero-bg::after {
             content: "";
             position: absolute;
-            inset: -2px;
-            background: radial-gradient(600px 260px at 20% 20%, rgba(158, 242, 211, .18), transparent 55%),
-                radial-gradient(520px 280px at 90% 10%, rgba(217, 255, 241, .12), transparent 55%);
-            filter: blur(10px);
-            opacity: .9;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
             pointer-events: none;
+            filter: blur(80px);
+            opacity: 0.15;
+            animation: float 20s infinite alternate cubic-bezier(0.45, 0.05, 0.55, 0.95);
         }
 
-        .hero-content {
-            position: relative;
-            padding: 28px;
+        .hero-bg::before {
+            background: radial-gradient(circle at center, rgba(158, 242, 211, 0.8), transparent 70%);
+            top: -10%;
+            left: -10%;
+        }
+
+        .hero-bg::after {
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.6), transparent 70%);
+            bottom: -20%;
+            right: -10%;
+            animation-duration: 25s;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(50px, -50px) scale(1.1);
+            }
+
+            100% {
+                transform: translate(-30px, 30px) scale(0.95);
+            }
+        }
+
+        .hero-content-minimal {
             display: flex;
             flex-direction: column;
-            gap: 14px;
-            min-height: 420px;
+            align-items: center;
+            max-width: 800px;
+            gap: 24px;
         }
 
-        .hero h2 {
-            margin: 6px 0 0;
-            font-family: Cinzel, serif;
-            font-weight: 700;
-            letter-spacing: .06em;
-            font-size: clamp(28px, 3.4vw, 44px);
-            line-height: 1.08;
-            text-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+        .hero-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: #d4af37;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
 
-        .hero p {
+        .hero-label::before,
+        .hero-label::after {
+            content: "";
+            height: 1px;
+            width: 40px;
+            background: rgba(212, 175, 55, 0.4);
+        }
+
+        .hero-headline {
             margin: 0;
+            font-family: 'Cinzel', serif;
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: 0.02em;
+            color: #ffffff;
+            text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-subheading {
+            margin: -10px 0 0 0;
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(18px, 2vw, 24px);
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .hero-body {
+            margin: 0;
+            font-size: clamp(15px, 1.5vw, 18px);
             color: var(--muted);
-            font-size: 15px;
-            line-height: 1.55;
-            max-width: 62ch;
+            line-height: 1.6;
+            max-width: 580px;
+            font-weight: 400;
         }
 
-        .hero-ctas {
+        .hero-actions {
             display: flex;
+            gap: 16px;
+            margin-top: 16px;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 8px;
+            justify-content: center;
         }
 
-        .meta {
-            margin-top: auto;
+        .hero-actions .btn {
+            padding: 14px 28px;
+            font-size: 14px;
+            border-radius: 30px;
+        }
+
+        .glowing-accent {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.9), rgba(184, 134, 11, 0.9)) !important;
+            border: 1px solid rgba(255, 235, 133, 0.5) !important;
+            color: #000 !important;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3) !important;
+            font-weight: 700 !important;
+        }
+
+        .glowing-accent:hover {
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5) !important;
+            transform: translateY(-2px);
+        }
+
+        .outline-accent {
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+            color: #fff !important;
+            background: rgba(255, 255, 255, 0.03) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        .outline-accent:hover {
+            border-color: rgba(255, 255, 255, 0.6) !important;
+            background: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        .subtle-accent {
+            color: var(--muted) !important;
+            border: none !important;
+            background: transparent !important;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+            box-shadow: none !important;
+        }
+
+        .subtle-accent:hover {
+            color: #fff !important;
+            background: transparent !important;
+            transform: none !important;
+        }
+
+        .hero-trust {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            font-size: 13px;
+            color: var(--muted2);
         }
 
-        .info-card {
-            border-radius: var(--radius2);
-            border: 1px solid rgba(255, 255, 255, .12);
-            background: rgba(255, 255, 255, .05);
-            box-shadow: var(--shadow2);
-            padding: 18px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            min-height: 420px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .info-card:before {
-            content: "";
-            position: absolute;
-            inset: -1px;
-            background: radial-gradient(520px 280px at 30% 20%, rgba(217, 255, 241, .10), transparent 55%),
-                radial-gradient(520px 320px at 90% 90%, rgba(158, 242, 211, .10), transparent 60%);
-            filter: blur(10px);
-            opacity: .9;
-            pointer-events: none;
-        }
-
-        .info-card>* {
-            position: relative
+        .hero-trust .stars {
+            color: #d4af37;
+            font-size: 14px;
+            letter-spacing: 2px;
         }
 
         .kpi {
@@ -957,102 +1043,31 @@
     </div>
 
     <!-- HERO -->
-    <header class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-card" id="tiltCard">
-                    <div class="hero-content">
-                        <span class="pill">Premium Rooftop Dining • Open Daily 5:30 PM – 4:00 AM</span>
-                        <h2>Elevated nights.<br />Signature flavours.</h2>
-                        <p>
-                            Stella Bistro brings a refined rooftop experience to Tariq Road—crafted plates, warm
-                            ambience,
-                            and late-night dining done right.
-                        </p>
+    <header class="hero-fullscreen">
+        <div class="hero-bg"></div>
+        <div class="container hero-center">
+            <div class="hero-content-minimal fade-in-up">
+                <span class="hero-label">Rooftop Dining Experience</span>
+                <h2 class="hero-headline">Where Karachi Meets<br />the Night</h2>
+                <h3 class="hero-subheading">Stella Bistro</h3>
+                <p class="hero-body">Elevated rooftop dining, crafted cuisine, and unforgettable nights — open till 4
+                    AM.</p>
 
-                        <div class="hero-ctas">
-                            <a class="btn primary" id="waReserveHero" href="#" rel="noopener">Reserve a Table</a>
-                            <a class="btn" id="waOrderHero" href="#" rel="noopener">Order Now (WhatsApp)</a>
-                            <a class="btn" href="https://www.foodpanda.pk/restaurant/h0pd/stella-bistro-h0pd"
-                                target="_blank" rel="noopener">Order on Foodpanda</a>
-                            <a class="btn" href="https://share.google/bHI5Lp76gFNFmn0Wo" target="_blank"
-                                rel="noopener">Get Directions</a>
-                        </div>
-
-                        <div class="meta">
-                            <span class="pill">📍 Rooftops, Free Port Shopping Mall, Main Tariq Road</span>
-                            <span class="pill">📞 +92 301 2234444</span>
-                            <span class="pill">🌙 Late-night service</span>
-                        </div>
-                    </div>
+                <div class="hero-trust fade-in-up delay-1">
+                    <span class="stars">★★★★★</span> 4.8★ • 27 Google reviews
                 </div>
 
-                <aside class="info-card">
-                    <div>
-                        <div class="section-title" style="margin:0 0 6px">
-                            <h3 style="font-size:18px">Quick Actions</h3>
-                            <p>Pitch-ready essentials</p>
-                        </div>
-                        <div class="kpi">
-                            <div class="tile">
-                                <div class="label">Reservation</div>
-                                <div class="value">WhatsApp / Call</div>
-                                <small class="muted">Instant booking</small>
-                            </div>
-                            <div class="tile">
-                                <div class="label">Ordering</div>
-                                <div class="value">WhatsApp / Foodpanda</div>
-                                <small class="muted"><a
-                                        href="https://www.foodpanda.pk/restaurant/h0pd/stella-bistro-h0pd"
-                                        target="_blank" style="text-decoration: underline;">Order on
-                                        Foodpanda</a></small>
-                            </div>
-                            <div class="tile">
-                                <div class="label">Menu</div>
-                                <div class="value">Categories + Search</div>
-                                <small class="muted">Fast filtering</small>
-                            </div>
-                            <div class="tile">
-                                <div class="label">Events</div>
-                                <div class="value">Inquiry Form</div>
-                                <small class="muted">Catering-ready</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sep"></div>
-
-                    <div>
-                        <div class="section-title" style="margin:0 0 6px">
-                            <h3 style="font-size:18px">Hours</h3>
-                            <p>Mon–Sun</p>
-                        </div>
-                        <p style="margin:0; color:var(--muted); line-height:1.6">
-                            Monday – Sunday<br />
-                            <b style="color:var(--text)">5:30 PM – 4:00 AM</b>
-                        </p>
-                    </div>
-
-                    <div class="sep"></div>
-
-                    <div>
-                        <div class="section-title" style="margin:0 0 6px">
-                            <h3 style="font-size:18px">Social</h3>
-                            <p>Follow Stella</p>
-                        </div>
-                        <div style="display:flex; gap:10px; flex-wrap:wrap">
-                            <a class="btn" href="https://www.instagram.com/stellabistro.pk/" target="_blank"
-                                rel="noopener">Instagram</a>
-                            <a class="btn" href="https://www.facebook.com/p/Stella-Bistro-61584550546857/"
-                                target="_blank" rel="noopener">Facebook</a>
-                            <a class="btn" href="https://www.foodpanda.pk/restaurant/h0pd/stella-bistro-h0pd"
-                                target="_blank" rel="noopener">Foodpanda</a>
-                        </div>
-                    </div>
-                </aside>
+                <div class="hero-actions fade-in-up delay-2">
+                    <a class="btn primary glowing-accent" id="waReserveHero" href="#" rel="noopener">Reserve a Table</a>
+                    <a class="btn ghost outline-accent" href="#menu">View Menu</a>
+                    <a class="btn ghost subtle-accent"
+                        href="https://www.foodpanda.pk/restaurant/h0pd/stella-bistro-h0pd" target="_blank"
+                        rel="noopener">Order on Foodpanda</a>
+                </div>
             </div>
         </div>
     </header>
+
 
     <!-- THE STELLA EXPERIENCE -->
     <section class="experience-section">
@@ -1602,20 +1617,22 @@
         });
 
         // ===========
-        // Simple 3D tilt on hero card (premium feel)
+        // Simple 3D tilt (only if tiltCard exists)
         // ===========
         const card = document.getElementById("tiltCard");
-        card.addEventListener("mousemove", (e) => {
-            const r = card.getBoundingClientRect();
-            const x = e.clientX - r.left;
-            const y = e.clientY - r.top;
-            const rx = ((y / r.height) - 0.5) * -7;
-            const ry = ((x / r.width) - 0.5) * 7;
-            card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
-        });
-        card.addEventListener("mouseleave", () => {
-            card.style.transform = "rotateX(0deg) rotateY(0deg)";
-        });
+        if (card) {
+            card.addEventListener("mousemove", (e) => {
+                const r = card.getBoundingClientRect();
+                const x = e.clientX - r.left;
+                const y = e.clientY - r.top;
+                const rx = ((y / r.height) - 0.5) * -7;
+                const ry = ((x / r.width) - 0.5) * 7;
+                card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+            });
+            card.addEventListener("mouseleave", () => {
+                card.style.transform = "rotateX(0deg) rotateY(0deg)";
+            });
+        }
 
         // ===========
         // Scroll Fade Anims
