@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full Menu — Stella Bistro</title>
+    <meta name="description" content="Explore the full menu of Stella Bistro, Tariq Road, Karachi." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .menu-page-header {
+            padding: 40px 18px;
+            text-align: center;
+        }
+
+        .menu-top-tools {
+            position: sticky;
+            top: 69px;
+            /* Height of the nav */
+            z-index: 40;
+            background: rgba(7, 19, 15, 0.85);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, .10);
+            padding: 14px 0;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body id="top">
+    <!-- NAV -->
+    <div class="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <div class="brand">
+                    <img src="assets/stella logo.png" alt="Stella Bistro" class="brand-logo" />
+                    <div>
+                        <h1>Stella Bistro</h1>
+                        <p>Full Menu</p>
+                    </div>
+                </div>
+
+                <div class="links">
+                    <a href="index.html">← Back to Home</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+
+                <div class="actions">
+                    <a class="btn primary glowing-accent" id="waReserveTop" href="#" rel="noopener">Reserve
+                        (WhatsApp)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-page-header fade-in-up">
+        <div class="container">
+            <span class="hero-label" style="justify-content:center; margin-bottom:12px">Karachi’s Premium Rooftop</span>
+            <h2 class="hero-headline" style="font-size:clamp(30px, 5vw, 48px);">Our Menu</h2>
+            <p class="hero-body" style="margin: 12px auto 0; text-align:center;">Discover our crafted selection of
+                steaks, pasta, fast food, and signature desserts.</p>
+        </div>
+    </div>
+
+    <!-- STICKY SEARCH & CATEGORY CHIPS -->
+    <div class="menu-top-tools fade-in-up delay-1">
+        <div class="container">
+            <div class="menu-tools" style="margin:0;">
+                <div class="search" role="search">
+                    <span style="color:rgba(255,255,255,.55)">⌕</span>
+                    <input id="fullMenuSearch" placeholder="Search menu by name, category, or ingredients..."
+                        autocomplete="off" />
+                </div>
+                <div class="chips" id="fullMenuChips"
+                    style="flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px;">
+                    <!-- Injected by script.js -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MENU CONTAINER -->
+    <section>
+        <div class="container" id="fullMenuContainer">
+            <!-- Injected by script.js -->
+        </div>
+    </section>
+
+    <!-- STICKY RESERVE MOBILE -->
+    <a class="btn primary glowing-accent sticky-reserve" id="waReserveSticky" href="#">Reserve a Table</a>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="foot">
+                <div>
+                    <b style="color:var(--text)">Stella Bistro</b> <span style="opacity:.8">• Karachi</span><br />
+                    <span>Open daily 5:30 PM – 4:00 AM</span>
+                </div>
+                <div style="display:flex; gap:12px; flex-wrap:wrap">
+                    <a href="index.html">Home</a>
+                    <a href="https://www.instagram.com/stellabistro.pk/" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://www.facebook.com/p/Stella-Bistro-61584550546857/" target="_blank"
+                        rel="noopener">Facebook</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menuData.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
