@@ -1,0 +1,41 @@
+# Simple Service Agreement
+
+Date: [Date]
+Project Name: Stella Bistro Website Build
+Client: Stella Bistro ("Client")
+Provider: [Your Name/Company] ("Provider")
+
+1. Services Provided
+The Provider agrees to build and launch a website for the Client as outlined in the attached Proposal & Scope of Work. This includes the design, layout, and functionality of the pages discussed.
+
+2. Pricing and Payment
+The total one-time cost for the website build is PKR 80,000.
+* A 50% non-refundable deposit (PKR 40,000) is required before work begins or final content integration starts.
+* The remaining 50% (PKR 40,000) is due upon project completion, prior to making the website live to the public on the official domain.
+* Monthly Maintenance of PKR 20,000 will commence 30 days after the go-live date.
+
+3. Timeline
+The Provider aims to launch the website within 5 days of receiving both the initial deposit and all required content (photos, menu prices, phone numbers) from the Client. 
+
+4. Revisions
+The project includes up to two (2) rounds of minor revisions (e.g., swapping photos, changing text, adjusting colors) prior to launch. Major structural redesigns are not included.
+
+5. Client Responsibilities
+The Client is responsible for providing accurate text, menu prices, and ensuring they have the legal right to use any photos they provide. The Client is responsible for final proofreading before launch.
+
+6. Ownership
+Upon clearance of the final 50% payment, the Client fully owns the website content, text, and images.
+
+7. Cancellation
+Either party may cancel this agreement at any time. If the Client cancels after work has begun, the 50% deposit is retained by the Provider to cover time and labor.
+
+Signatures
+
+_____________________________________ 
+For Stella Bistro (Client) 
+Date: 
+
+
+_____________________________________ 
+[Your Name] (Provider) 
+Date: 

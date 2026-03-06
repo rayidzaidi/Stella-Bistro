@@ -1,0 +1,52 @@
+# Proposal & Scope of Work
+Project: Website Design & Development
+Prepared For: Stella Bistro
+Date: March 6, 2026
+
+Executive Summary
+The goal of this project is to provide Stella Bistro with a premium, high-performing website that reflects its elevated rooftop dining experience. The website is designed to drive direct consumer action: WhatsApp reservations, easy location finding, and clear menu browsing.
+
+Project Goals
+1. Increase direct table reservations via WhatsApp integration.
+2. Improve customer experience with a mobile-first, highly readable digital menu.
+3. Drive foot traffic by making the Tariq Road location easily discoverable via Google Maps.
+4. Capture leads for private events, birthdays, and catering.
+
+Scope & Deliverables
+The website will include the following core sections and features:
+* Home Page: Hero section with parallax scrolling, "The Stella Experience" highlights, and quick calls-to-action.
+* Menu System: A "Menu Highlights" section on the homepage and a dedicated "Full Menu" page with categories and prices.
+* Gallery: A visual grid showcasing food and rooftop ambiance.
+* Reviews: Integration of existing 5-star Google Reviews.
+* Events: A contact form tailored for event inquiries (birthdays, corporate, etc.) that routes directly to your WhatsApp.
+* Contact & Location: Embedded Google Map, address details, Call button, and WhatsApp chat button.
+* Technical: Mobile responsive design, fast loading speeds, hosting, and domain setup.
+
+What is NOT Included
+To keep expectations clear, the following are not included in this base scope:
+* Professional food or architectural photography (client to provide photos).
+* Paid advertising management (Facebook/Google Ads).
+* A custom, built-in e-commerce ordering system with a payment gateway (we use WhatsApp/Foodpanda routing instead).
+
+Content Responsibilities
+* Provider (Me): Website structure, design, coding, animations, map integration, and layout.
+* Client (Stella Bistro): Official phone numbers, WhatsApp numbers, email (if any), final menu prices/text, and high-quality photos of the food and restaurant. 
+
+Timeline & Milestones
+* Target: 5 days to "Go-Live" after receiving all required content and the initial deposit.
+
+Pricing & Payment Schedule
+* Website Build (One-Time): PKR 80,000 (Includes domain name and initial hosting setup).
+* Payment Terms: 50% deposit to start (PKR 40,000) / 50% before the site officially goes live (PKR 40,000).
+* Monthly Maintenance: PKR 20,000 per month (details on Care Plan page).
+
+Optional Add-Ons (For Future Consideration)
+* Professional Menu Photography Session (Estimated PKR 15,000 - 25,000)
+* Branded Staff Email Addresses (e.g., info@stellabistro.pk) (Estimated PKR 5,000/yr)
+* Search Engine Optimization (SEO) Boost Package (Estimated PKR 20,000)
+
+Next Steps
+1. Review and approve this proposal.
+2. Sign the simple service agreement.
+3. Pay the 50% deposit.
+4. Provide the missing photos and phone numbers via the Content Checklist.

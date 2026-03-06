@@ -1,0 +1,21 @@
+# Deposit Invoice
+
+Invoice Number: INV-001
+Date: March 6, 2026
+Billed To: Stella Bistro
+
+Project: Custom Website Build & Deployment
+
+Description: Website Build - 50% Initial Deposit
+Total Value: PKR 80,000
+Amount Due Now: PKR 40,000
+
+Total Amount Due: PKR 40,000
+Due Date: Upon Receipt
+
+Payment Methods:
+* Bank Transfer: [Insert Your Bank Name] / [Account Title] / [Account Number or IBAN]
+* Easypaisa / JazzCash: [Insert Number] / [Insert Name]
+* Cash: Accepted in person.
+
+*(The remaining balance of PKR 40,000 will be invoiced upon project completion, prior to the website going live).*

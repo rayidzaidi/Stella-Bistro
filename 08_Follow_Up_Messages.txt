@@ -1,0 +1,26 @@
+# Follow-Up Message Templates
+
+### WhatsApp Message (Send 1-2 days after meeting)
+Hi [Owner's Name, or 'Team Stella Bistro'], it was great meeting you the other day! 🌟 Just following up on the website demo I built for you. You can play around with the live link here: [Insert Demo Link]. Since the heavy lifting is already done, if we get started this week with the deposit and your food photos, I can have this live and routing reservations to your WhatsApp within 5 days. Let me know if you have any questions!
+
+### Email Message (If you have their email)
+Subject: The Stella Bistro Website Concept - Next Steps
+
+Hi [Owner's Name / Manager],
+
+Thank you for your time recently. As promised, I wanted to share the link to the concept website I built specifically for Stella Bistro: 
+
+View Demo Here: [Insert Demo Link]
+
+As you can see, the site is designed to highlight your premium rooftop ambiance, make the menu incredibly easy to read on mobile phones, and route customer reservations directly to your WhatsApp.
+
+We are 90% of the way there. To get this live in 5 days, our next steps are:
+1. Approve the 50% deposit (PKR 40,000).
+2. Send me your high-res food photos and official contact numbers.
+
+I've attached the proposal and maintenance details to this email for your reference. Let me know when you are ready to take the next step!
+
+Best regards,
+
+[Your Name]
+[Your Phone Number]
