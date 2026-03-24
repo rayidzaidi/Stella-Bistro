@@ -345,5 +345,11 @@ function init() {
 
 // Automatically init if loaded as module in browser
 if (typeof document !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', () => {
+        init();
+        // Restore smooth scroll behavior only after the initial top-jump is complete
+        setTimeout(() => {
+            document.documentElement.style.scrollBehavior = 'smooth';
+        }, 300);
+    });
 }
