@@ -207,26 +207,12 @@ function initScrollSequence() {
     const globalCurtain = document.getElementById('globalCurtain');
     const heroContent = document.getElementById('heroContent');
     const heroIntro = document.getElementById('heroIntro');
-    const nav = document.querySelector('.nav');
 
     if (!globalCurtain || !heroContent || !heroIntro) return;
-
-    // Check initial state
-    if (nav && window.scrollY > 50) {
-        nav.classList.add('nav-visible');
-    }
 
     window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
         const vh = window.innerHeight;
-
-        if (nav) {
-            if (scrollY > 50) {
-                nav.classList.add('nav-visible');
-            } else {
-                nav.classList.remove('nav-visible');
-            }
-        }
 
         if (scrollY <= vh) {
             // Calculate progress from 0 (top) to 1 (scrolled 100vh)
@@ -261,7 +247,33 @@ function initScrollSequence() {
     }
 }
 
+function initNavVisibility() {
+    const nav = document.querySelector('.nav');
+    if (!nav) return;
+
+    const isHomePage = !!document.getElementById('heroSequence');
+
+    if (!isHomePage) {
+        nav.classList.add('nav-visible');
+        return;
+    }
+
+    // Home page cinematic scroll-reveal
+    if (window.scrollY > 50) {
+        nav.classList.add('nav-visible');
+    }
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            nav.classList.add('nav-visible');
+        } else {
+            nav.classList.remove('nav-visible');
+        }
+    });
+}
+
 function init() {
+    initNavVisibility();
     wireWhatsApp();
     renderFeaturedCategories();
     renderMenuHighlights();
