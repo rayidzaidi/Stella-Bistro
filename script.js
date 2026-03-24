@@ -346,15 +346,25 @@ function init() {
 // Automatically init if loaded as module in browser
 if (typeof document !== 'undefined') {
     document.addEventListener('DOMContentLoaded', () => {
+        // Prevent browser from restoring scroll position to the bottom of the page
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
-        // Force scroll to top
+
+        // Force the page to always start at the absolute top INSTANTLY
+        // We temporarily disable any 'scroll-behavior: smooth' from CSS
+        const html = document.documentElement;
+        const originalScrollBehavior = html.style.scrollBehavior;
+        html.style.scrollBehavior = 'auto';
+        
         window.scrollTo(0, 0);
         
         init();
-        
-        // Safety timeout to ensure it stays at top
-        setTimeout(() => window.scrollTo(0, 0), 100);
+
+        // Safety jump to top, then restore behavior
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+            html.style.scrollBehavior = originalScrollBehavior;
+        }, 50);
     });
 }
