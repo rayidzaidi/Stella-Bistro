@@ -345,6 +345,16 @@ function init() {
 
 // Automatically init if loaded as module in browser
 if (typeof document !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', () => {
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        // Force scroll to top
+        window.scrollTo(0, 0);
+        
+        init();
+        
+        // Safety timeout to ensure it stays at top
+        setTimeout(() => window.scrollTo(0, 0), 100);
+    });
 }
-
