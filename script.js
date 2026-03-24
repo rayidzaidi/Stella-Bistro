@@ -247,33 +247,47 @@ function initScrollSequence() {
     }
 }
 
-function initNavVisibility() {
+function initScrollDirection() {
     const nav = document.querySelector('.nav');
+    const menuTools = document.querySelector('.menu-top-tools');
+    
     if (!nav) return;
 
-    const isHomePage = !!document.getElementById('heroSequence');
-
-    if (!isHomePage) {
-        nav.classList.add('nav-visible');
-        return;
-    }
-
-    // Home page cinematic scroll-reveal
-    if (window.scrollY > 50) {
-        nav.classList.add('nav-visible');
-    }
+    let lastScrollY = window.scrollY;
     
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            nav.classList.add('nav-visible');
-        } else {
-            nav.classList.remove('nav-visible');
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY <= 0) {
+            nav.classList.remove('nav-hidden');
+            if (menuTools) {
+                menuTools.style.top = '69px';
+            }
+            lastScrollY = currentScrollY;
+            return;
         }
+
+        if (currentScrollY > lastScrollY && currentScrollY > 75) {
+            // Scrolling DOWN
+            nav.classList.add('nav-hidden');
+            if (menuTools) {
+                menuTools.style.transition = 'top 0.3s ease';
+                menuTools.style.top = '0px';
+            }
+        } else if (currentScrollY < lastScrollY) {
+            // Scrolling UP
+            nav.classList.remove('nav-hidden');
+            if (menuTools) {
+                menuTools.style.top = '69px';
+            }
+        }
+        
+        lastScrollY = currentScrollY;
     });
 }
 
 function init() {
-    initNavVisibility();
+    initScrollDirection();
     wireWhatsApp();
     renderFeaturedCategories();
     renderMenuHighlights();

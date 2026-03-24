@@ -73,16 +73,11 @@ a {
     backdrop-filter: blur(14px);
     background: rgba(7, 19, 15, .55);
     border-bottom: 1px solid rgba(255, 255, 255, .10);
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    transform: translateY(-100%);
-    opacity: 0;
-    pointer-events: none;
+    transition: transform 0.3s ease;
 }
 
-.nav.nav-visible {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
+.nav.nav-hidden {
+    transform: translateY(-100%);
 }
 
 .nav-inner {
@@ -822,6 +817,8 @@ section {
     font-size: 12px;
     cursor: pointer;
     transition: .16s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .chip:hover {
