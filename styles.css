@@ -65,8 +65,10 @@ a {
 
 /* top nav */
 .nav {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 50;
     backdrop-filter: blur(14px);
     background: rgba(7, 19, 15, .55);
@@ -1002,6 +1004,48 @@ footer {
 }
 
 @media (max-width: 980px) {
+    .nav {
+        position: relative;
+    }
+
+    .nav-inner {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .brand {
+        min-width: auto;
+        flex: 1;
+    }
+
+    .actions {
+        min-width: auto;
+    }
+
+    #waReserveTop {
+        display: none;
+    }
+
+    .links {
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .links a {
+        white-space: nowrap;
+    }
+
     .hero-grid {
         grid-template-columns: 1fr
     }
@@ -1025,14 +1069,6 @@ footer {
 
     .row {
         grid-template-columns: 1fr
-    }
-
-    .actions {
-        min-width: auto
-    }
-
-    .brand {
-        min-width: auto
     }
 }
 
