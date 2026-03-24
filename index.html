@@ -17,10 +17,14 @@
 
     <link rel="stylesheet" href="styles.css">
     <script>
+        // Use the manual scroll restoration as soon as possible
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
+        // Force top with multiple strategies before first paint
         window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body ? document.body.scrollTop = 0 : null;
     </script>
 
 </head>

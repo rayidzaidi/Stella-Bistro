@@ -26,9 +26,7 @@ body {
     height: 100%;
 }
 
-html {
-    scroll-snap-type: y proximity;
-}
+/* Scroll snap and behavior managed via JS to prevent page-load flickering */
 
 body {
     margin: 0;

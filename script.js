@@ -347,9 +347,10 @@ function init() {
 if (typeof document !== 'undefined') {
     document.addEventListener('DOMContentLoaded', () => {
         init();
-        // Restore smooth scroll behavior only after the initial top-jump is complete
+        // Restore smooth and snap behavior only after the initial top-jump is complete
         setTimeout(() => {
             document.documentElement.style.scrollBehavior = 'smooth';
-        }, 300);
+            document.documentElement.style.scrollSnapType = 'y proximity';
+        }, 500);
     });
 }
