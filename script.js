@@ -149,13 +149,8 @@ function initHeroParallax() {
     const heroWrapper = document.getElementById('heroParallax');
     if (!heroWrapper) return;
 
-    // Check if device supports hover (typically desktop/mouse)
-    const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
-    // Even if it's touch, if the device reports it can hover, we'll allow it.
-    const canHover = window.matchMedia('(hover: hover)').matches;
-
-    // Disabled on touch devices to prevent jittering on scroll
-    if (isTouchDevice && !canHover) return;
+    // Disabled on narrow screens (e.g. mobile phones) to prevent jittering on scroll
+    if (window.innerWidth <= 980) return;
 
     // We only need to move the global parallax image and optionally the intro text (if desired)
     const layers = [
@@ -352,3 +347,4 @@ function init() {
 if (typeof document !== 'undefined') {
     document.addEventListener('DOMContentLoaded', init);
 }
+
